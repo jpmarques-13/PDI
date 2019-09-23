@@ -12,5 +12,5 @@ function retorna = equalizacao(imagem)
             end
          end
       end
-      retorna=uint8(retorna);%trunca valores para número inteiros
+      retorna=uint8(retorna);                            %
 end

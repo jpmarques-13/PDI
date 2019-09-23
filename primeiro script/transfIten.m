@@ -34,15 +34,20 @@ for i=1:M
 
     end
 end
-
+novaimg=img1_3+img3_5+img5_7+img7_8;
+novaimg=uint8(novaimg);
 figure
-imshow(img);
+imshow(novaimg)
 figure
 subplot(2,2,1)
 imshow(img1_3)
+title('bits 1 ao 3')
 subplot(2,2,2)
 imshow(img3_5)
+title('bits 3 ao 5')
 subplot(2,2,3)
 imshow(img5_7)
+title('bits 5 ao 7')
 subplot(2,2,4)
 imshow(img7_8)
+title('bit 8')

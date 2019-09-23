@@ -20,6 +20,6 @@ figure
         title('histograma da imagem de saída')
 
  
-
+imwrite(novaimg,'./PDI/primeiro script/saida.pgm')
 
 
