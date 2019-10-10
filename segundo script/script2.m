@@ -1,12 +1,24 @@
 clc;
 clear;
-img             =  imread('einstein.pgm');
+img             =  imread('Lena.pgm');
 imgN            =  negative(img);
 imgL            =  logaritmo(img,30);
 imgLN           =  normali(imgL);
 imgP            =  powerLaw(img,2,0.01);
 imgPN             =  normali(imgP);
 
+    
+t = linspace(0,1,100);  
+figure
+subplot(2,1,1)
+   plot(log(t))
+   title('funcao ln')
+subplot(2,1,2)
+    plot(t.^3)
+    title('funcao gamma (gamma>0)')
+
+    
+    
 figure
 subplot(2,3,1)
     imshow(img)
