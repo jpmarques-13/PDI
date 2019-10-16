@@ -10,7 +10,7 @@ figure
 imshowpair(In,Out,'montage')
 title('filtro gaussiano')
 
-%% Filtro média
+%% Filtro mï¿½dia
 filtro = fspecial('average',[3 3]);
 for c = 1:3
 Out = imfilter(In,filtro,'replicate');
@@ -32,6 +32,6 @@ filtro = fspecial('gaussian',[5 5],1);
 Out = imfilter(Out,filtro,'replicate');
 figure
 imshowpair(In,Out,'montage')
-
+title('melhor setup')
 
 
