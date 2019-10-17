@@ -1,0 +1,40 @@
+clc; clear;
+img             = imread('relogio.pgm');         %grava a imagem em forma de matriz em uma variavel (imagem de entrada)
+novaimg         = equalizacao(img);              %calcula a nova imagem, fazendo a equalização de histograma (imagem de saída)
+histograma      = hist(img);                     %calcula o histograma da imagem de entrada
+novohistograma  = hist(novaimg);                 %calcula o histograma da imagem de saida
+figure
+    subplot(2,2,1)
+        imshow(img)
+        title('imagem de entrada')
+    subplot(2,2,2)
+        bar(histograma)
+        %imhist(img)
+        title('histograma da imagem de entrada')
+    subplot(2,2,3)
+        imshow(novaimg)
+        title('imagem de saída')
+    subplot(2,2,4)
+        bar(novohistograma)
+        %imhist(novaimg)
+        title('histograma da imagem de saída')
+
+ 
+imwrite(novaimg,'./PDI/primeiro script/saida.pgm')
+
+retorna1=acumulada(img);
+retorna = zeros(256,1);                                      %cria vetor para armazena a acumulada
+retorna = retorna+histograma*256/M
+for i=1:256
+    acumulada(i)=ceil(sum(retorna(1:i)))
+end
+histograma=hist(img);                                     %armazena o histograma da imagem em um vetor
+M=length(img(1,:))*length(img(:,1));                   %tamanho de pixels presente na imagem 
+acumulada = tril(ones(256,256));
+acumulada = acumulada*retorna;
+z=
+x=sum(z)
+%retorna=sum(retorna)
+
+acumulada = ones(256,1);
+acumulada=retorna.*acumulada;
